@@ -9,6 +9,7 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import DeckList from './components/DeckList';
 import Deck from './components/Deck';
 import NewDeck from './components/NewDeck';
+import NewQuestion from './components/NewQuestion';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
 
@@ -61,6 +62,15 @@ const MainNavigator = StackNavigator({
   },
   Deck: {
     screen: Deck,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      }
+    }
+  },
+  NewQuestion: {
+    screen: NewQuestion,
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {

@@ -42,6 +42,7 @@ export function getDecksApi() {
             const deck = JSON.parse(title[1]);
             if (isEmpty(deck)) return;
             return {
+              key: deck.title,
               title: deck.title,
               cardCount: deck.questions.length
             };

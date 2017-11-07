@@ -4,7 +4,7 @@ import { Card, Badge, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { getDeck } from '../actions';
 import { isEmpty } from 'lodash';
-import FlipCard from 'react-native-flip-card';
+import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
 
 class Quiz extends Component {
 
@@ -34,6 +34,8 @@ class Quiz extends Component {
     }
 
     if (this.state.currentQuestion === questions.length) {
+      clearLocalNotification()
+        .then(setLocalNotification);
       return (
         <View style={styles.card}>
           <Card title={

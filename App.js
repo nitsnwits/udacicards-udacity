@@ -3,7 +3,7 @@ import { View, Platform, StatusBar } from 'react-native';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import { TabNavigator, StackNavigator } from 'react-navigation';
-import { purple, white } from './utils/colors';
+import { blue, white } from './utils/colors';
 import { Constants } from 'expo';
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import DeckList from './components/DeckList';
@@ -42,10 +42,10 @@ const Tabs = TabNavigator({
     header: null
   },
   tabBarOptions: {
-    activeTintColor: Platform.OS === 'ios' ? purple : white,
+    activeTintColor: Platform.OS === 'ios' ? blue : white,
     style: {
       height: 56,
-      backgroundColor: Platform.OS === 'ios' ? white : purple,
+      backgroundColor: Platform.OS === 'ios' ? white : blue,
       shadowColor: 'rgba(0, 0, 0, 0.24)',
       shadowOffset: {
         width: 0,
@@ -66,7 +66,7 @@ const MainNavigator = StackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: purple,
+        backgroundColor: blue,
       }
     }
   },
@@ -75,7 +75,7 @@ const MainNavigator = StackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: purple,
+        backgroundColor: blue,
       }
     }
   },
@@ -84,7 +84,7 @@ const MainNavigator = StackNavigator({
     navigationOptions: {
       headerTintColor: white,
       headerStyle: {
-        backgroundColor: purple,
+        backgroundColor: blue,
       }
     }
   }
@@ -104,7 +104,7 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <UdacicardsStatusBar backgroundColor={purple} barStyle="light-content" />
+          <UdacicardsStatusBar backgroundColor={blue} barStyle="light-content" />
           <MainNavigator />
         </View>
       </Provider>

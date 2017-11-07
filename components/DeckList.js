@@ -11,6 +11,10 @@ class DeckList extends Component {
     this.props.getDecks();
   }
 
+  componentWillUpdate() {
+    this.props.getDecks();
+  }
+
   render() {
     const { decks } = this.props;
 

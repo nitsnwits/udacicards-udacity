@@ -22,7 +22,7 @@ class NewDeck extends Component {
     }
 
     this.props.submit(this.state.title);
-    this.props.navigation.navigate('DeckList');
+    this.props.navigation.navigate('Decks');
   };
 
   render() {

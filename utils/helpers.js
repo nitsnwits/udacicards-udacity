@@ -6,6 +6,9 @@ import { Notifications, Permissions } from 'expo';
 
 const NOTIFICATION_KEY = 'Udacicards:notifications'
 
+/**
+ * Most of this code is inspired from, referenced from udacifitness
+ */
 function createNotification () {
   return {
     title: 'Never stop learning!',

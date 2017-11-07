@@ -27,19 +27,26 @@ class DeckList extends Component {
     }
 
     return (
-      <View style={styles.deckList}>
-      {
-        decks.map((deck, index) => {
-          return (
-            <Card key={index} title={deck.title}>
-              <Badge containerStyle={{ backgroundColor: 'orange'}}>
-                <Text>Questions: {deck.cardCount}</Text>
-              </Badge>
-            </Card>
-          )
-        })
-      }
-      </View>
+        <View style={styles.deckList}>
+        {
+          decks.map((deck, index) => {
+            return (
+              <TouchableOpacity
+                key={deck.title}
+                onPress={ () => {
+                  this.props.navigation.navigate('Deck', { title: deck.title })
+                }}
+              >
+              <Card key={index} title={deck.title}>
+                <Badge containerStyle={{ backgroundColor: 'orange'}}>
+                  <Text>Questions: {deck.cardCount}</Text>
+                </Badge>
+              </Card>
+              </TouchableOpacity>
+            )
+          })
+        }
+        </View>
     )
 
   }
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
 });
 
 function mapStateToProps(state) {
-  return {decks: state};
+  return {decks: state.decks};
 }
 
 function mapDispatchToProps(dispatch) {

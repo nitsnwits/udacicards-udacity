@@ -53,6 +53,7 @@ export function getDecksApi() {
 
 export function getDeckApi(title) {
   return AsyncStorage.getItem(title)
+    .then(titleInfo => JSON.parse(titleInfo))
     .catch(err => console.error('Error getDeck: ', err));
 }
 

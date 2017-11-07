@@ -7,7 +7,7 @@ import { purple, white } from './utils/colors';
 import { Constants } from 'expo';
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import DeckList from './components/DeckList';
-//import Deck from './components/Deck';
+import Deck from './components/Deck';
 import NewDeck from './components/NewDeck';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
@@ -59,15 +59,15 @@ const MainNavigator = StackNavigator({
   Home: {
     screen: Tabs,
   },
-  // Deck: {
-  //   screen: Deck,
-  //   navigationOptions: {
-  //     headerTintColor: white,
-  //     headerStyle: {
-  //       backgroundColor: purple,
-  //     }
-  //   }
-  // }
+  Deck: {
+    screen: Deck,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      }
+    }
+  }
 })
 
 // add redux to store

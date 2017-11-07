@@ -63,9 +63,9 @@ export const handleAddCardToDeck = response => {
   };
 }
 
-export const addCardToDeck = card => {
+export const addCardToDeck = (title, card) => {
   return dispatch => {
-    return addCardToDeckApi(card)
+    return addCardToDeckApi(title, card)
       .then(card => dispatch(handleAddCardToDeck(card)))
       .catch(err => console.error('Error action addCardToDeck: ', err));
   }

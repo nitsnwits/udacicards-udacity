@@ -10,6 +10,7 @@ import DeckList from './components/DeckList';
 import Deck from './components/Deck';
 import NewDeck from './components/NewDeck';
 import NewQuestion from './components/NewQuestion';
+import Quiz from './components/Quiz';
 import reducers from './reducers';
 import thunk from 'redux-thunk';
 
@@ -77,8 +78,17 @@ const MainNavigator = StackNavigator({
         backgroundColor: purple,
       }
     }
+  },
+  Quiz: {
+    screen: Quiz,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple,
+      }
+    }
   }
-})
+});
 
 // add redux to store
 const store = createStore(

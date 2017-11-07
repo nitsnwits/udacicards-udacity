@@ -33,6 +33,9 @@
 import { AsyncStorage } from 'react-native';
 import { isEmpty } from 'lodash';
 
+// temp for testing purposes
+//AsyncStorage.clear();
+
 export function getDecksApi() {
   return AsyncStorage.getAllKeys()
     .then(titles => {

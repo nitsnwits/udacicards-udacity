@@ -62,7 +62,7 @@ class Deck extends Component {
                 raised
                 icon={{name: 'question-answer'}}
                 title='Start a quiz'
-                onPress={this.onAdd.bind(this)}
+                onPress={this.onQuiz.bind(this)}
               />
             </View>
           </Card>

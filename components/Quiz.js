@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import { Card, Badge, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { getDeck } from '../actions';
 import { isEmpty } from 'lodash';
 import { clearLocalNotification, setLocalNotification } from '../utils/helpers';
 
@@ -138,13 +137,6 @@ function mapStateToProps(state, { navigation }) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    getDeck: (title) => dispatch(getDeck(title))
-  };
-}
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Quiz);

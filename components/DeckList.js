@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet, Platform, TouchableOpacity, FlatList } from 'react-native';
 import { Card, Badge } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { getDecks } from '../actions';
 import { isEmpty } from 'lodash';
 
-class DeckList extends Component {
+class DeckList extends PureComponent {
 
   componentDidMount() {
     this.props.getDecks();
@@ -64,8 +64,15 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps(state) {
-  return {decks: state.decks};
+function mapStateToProps({ decks }) {
+  let decksState = { decks };
+  if (!isEmpty(decks)) {
+    const sanitizedDecks = decks.filter(deck => {
+      if (deck) return deck;
+    });
+    decksState = { decks: sanitizedDecks };
+  }
+  return decksState;
 }
 
 function mapDispatchToProps(dispatch) {

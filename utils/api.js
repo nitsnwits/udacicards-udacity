@@ -63,6 +63,7 @@ export function getDeckApi(title) {
 
 export function saveDeckTitleApi(title) {
   return AsyncStorage.setItem(title, JSON.stringify({ title, questions: []}))
+    .then(() => {return {title, cardCount: 0}})
     .catch(err => console.error('Error saveDeckTitle: ', err));
 }
 
@@ -71,7 +72,7 @@ export function addCardToDeckApi(title, card) {
     .then(titleInfo => {
       const updatedTitle = JSON.parse(titleInfo);
       updatedTitle.questions.push(card);
-      return AsyncStorage.mergeItem(title, JSON.stringify({questions: updatedTitle.questions}));
+      return AsyncStorage.mergeItem(title, JSON.stringify({title, questions: updatedTitle.questions}));
     })
     .catch(err => console.error('Error addCardToDeck: ', err));
 }

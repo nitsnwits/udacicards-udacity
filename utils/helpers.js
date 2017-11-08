@@ -4,7 +4,7 @@ import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector
 import { red, orange, blue, lightPurp, pink, white } from './colors';
 import { Notifications, Permissions } from 'expo';
 
-const NOTIFICATION_KEY = 'Udacicards:notifications'
+const NOTIFICATION_KEY = 'Udacicards:notifications';
 
 /**
  * Most of this code is inspired from, referenced from udacifitness

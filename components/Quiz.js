@@ -52,6 +52,20 @@ class Quiz extends Component {
                 }}
               />
             </View>
+            <View>
+              <Button
+                raised
+                icon={{name: 'refresh'}}
+                title='Restart'
+                onPress={() => {
+                  this.setState({
+                    flip: true,
+                    currentQuestion: 0,
+                    correctQuestions: 0
+                  });
+                }}
+              />
+            </View>
         </View>
       )
     }
@@ -98,30 +112,6 @@ class Quiz extends Component {
                   this.setState({
                     currentQuestion: this.state.currentQuestion + 1
                   });
-                }}
-              />
-            </View>
-            <View>
-              <Button
-                raised
-                icon={{name: 'refresh'}}
-                title='Restart'
-                onPress={() => {
-                  this.setState({
-                    flip: true,
-                    currentQuestion: 0,
-                    correctQuestions: 0
-                  });
-                }}
-              />
-            </View>
-            <View>
-              <Button
-                raised
-                icon={{name: 'keyboard-backspace'}}
-                title='Deck'
-                onPress={() => {
-                  this.props.navigation.goBack();
                 }}
               />
             </View>
